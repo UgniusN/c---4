@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App6
+namespace App7
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //elektros skaiciuokle
         }
     }
 }
