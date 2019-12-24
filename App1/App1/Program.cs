@@ -6,15 +6,44 @@ namespace App1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Iveskite pirma kintamaji: ");
-            String intLaik = Console.ReadLine();
-            int firstInteger = Convert.ToInt32(intLaik);
+            bool skaiciaustikrinimasA;
+            double skaiciusA;
+            bool skaiciaustikrinimasB;
+            double skaiciusB;
+            for (; ; )
+            {
+                Console.WriteLine("Iveskite pirma kintamaji: ");
+                String intLaik = Console.ReadLine();
+                skaiciaustikrinimasA = double.TryParse(intLaik, out skaiciusA);
+                if(skaiciaustikrinimasA==true)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Neteisingas ivesto skaiciaus formatas");
+                }
 
-            Console.WriteLine("Iveskite antra kintamaji: ");
-            String intLaikAntr = Console.ReadLine();
-            int secondInteger = Convert.ToInt32(intLaikAntr);
+            }
 
-            var tikrinimas = (firstInteger == secondInteger);
+            for (; ; )
+            {
+                Console.WriteLine("Iveskite antra kintamaji: ");
+                String intLaikAntr = Console.ReadLine();
+                skaiciaustikrinimasB = double.TryParse(intLaikAntr, out skaiciusB);
+
+                if (skaiciaustikrinimasB == true)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Neteisingas ivesto skaiciaus formatas");
+                }
+
+            }
+
+        var tikrinimas = (skaiciusA == skaiciusB);
 
             Console.WriteLine("Ar vienodi? {0}", tikrinimas);
 
